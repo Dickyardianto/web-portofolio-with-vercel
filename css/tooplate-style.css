@@ -29,9 +29,7 @@ ul {
   margin: 0;
   padding: 0;
 }
-ul li {
-  list-style: none;
-}
+
 
 a {
   font-weight: normal;
@@ -61,7 +59,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   color: #212121;
   font-size: 2.8em;
-  margin: 24px 0;
 }
 
 h2 {
@@ -110,8 +107,10 @@ b, strong {
   display: inline-block;
   vertical-align: top;
   margin-top: 5px;
-  min-width: 350px;
+  min-width: 400px;
   position: relative;
+  height: 50px;
+  overflow: hidden;
 }
 
 .animated-item {
@@ -128,13 +127,26 @@ b, strong {
   top: 0;
   right: 0;
   left: 0;
-  animation: BottomTotop 6s linear infinite 0s;
+  animation: BottomTotop 8s linear infinite 0s;
 }
-.animated-item:nth-child(2n+2) {
+
+.animated-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.animated-item:nth-child(2) {
   animation-delay: 2s;
 }
-.animated-item:nth-child(3n+3) {
+.animated-item:nth-child(3) {
   animation-delay: 4s;
+}
+.animated-item:nth-child(4) {
+  animation-delay: 6s;
+}
+
+@media (max-width: 767px) {
+  .animated-info {
+    height: 46px; /* sesuaikan dengan ukuran mobile */
+  }
 }
 
 @keyframes BottomTotop {
@@ -521,7 +533,7 @@ b, strong {
 }
 @media (max-width: 580px) {
 	.animated-info {
-		min-width: 200px;
+		min-width: 400px;
 	}
   .animated-item {
     font-size: 30px;
@@ -534,6 +546,7 @@ b, strong {
   .custom-btn {
     display: block;
     margin: 10px 0;
+    width: 360px;
   }
 
   .owl-theme .owl-nav {
@@ -607,4 +620,34 @@ b, strong {
   .advanced-classes {
     margin-top: 0px !important;
   }
+}
+
+.timeline-info ul {
+  margin-bottom: 1.2rem;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+  white-space: normal;
+  word-break: break-word;
+  max-width: 100%; /* agar responsif */
+  list-style: disc !important; /* atau 'circle' / 'square' */
+}
+
+.timeline-info li {
+  line-height: 22px;
+  margin-bottom: 8px;
+  text-align: justify; /* opsional: biar rata kiri-kanan */
+}
+
+.timeline-info {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.timeline-info strong {
+  display: block;
+  font-weight: 600;
+  color: #474559;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
 }
